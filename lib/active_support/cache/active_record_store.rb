@@ -7,7 +7,7 @@ module ActiveSupport
       VERSION = "0.0.3"
 
       # do not allow to store more items than
-      ITEMS_LIMIT = 5000
+      ITEMS_LIMIT = 10000
 
       # set database url:
       #   ENV['ACTIVE_RECORD_CACHE_STORE_DATABASE_URL'] = "sqlite3://./db/test2.sqlite3"
@@ -65,7 +65,7 @@ module ActiveSupport
       end
 
       def read_entry(key, options={})
-        item = CacheItem.find_by_key(key)
+        item = CacheItem.find_by(key: key)
 
         if item.present? && debug_mode?
           item.meta_info[:access_counter] += 1
