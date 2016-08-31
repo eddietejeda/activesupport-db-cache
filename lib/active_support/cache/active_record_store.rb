@@ -7,7 +7,7 @@ module ActiveSupport
       VERSION = "0.0.3"
 
       # do not allow to store more items than
-      ITEMS_LIMIT = 10000
+      ITEMS_LIMIT = ENV['ACTIVE_RECORD_CACHE_ITEM_LIMIT'] ? ENV['ACTIVE_RECORD_CACHE_ITEM_LIMIT'] : 5000
 
       # set database url:
       #   ENV['ACTIVE_RECORD_CACHE_STORE_DATABASE_URL'] = "sqlite3://./db/test2.sqlite3"
