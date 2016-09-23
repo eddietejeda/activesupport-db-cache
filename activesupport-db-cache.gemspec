@@ -1,6 +1,5 @@
-# -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require 'activesupport-db-cache'
+#encoding: utf-8
+require File.expand_path('../lib/activesupport-db-cache.rb', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Sergei O. Udalov"]
